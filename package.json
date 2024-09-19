@@ -1,0 +1,15 @@
+{
+  "name": "testing-github-workflow-lenizeramos",
+  "version": "1.0.0",
+  "description": "Install Jest and any necessary dependencies:",
+  "main": "jestconfig.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
