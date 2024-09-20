@@ -2,7 +2,7 @@ const isEvenNumber = (number) => number % 2 === 0;
 
 const conditionalSum = function (values = [], condition = "") {
   const filtered = values.filter((number) =>
-    condition === "even" ? isEvenNumber(number) : !isEvenNumber(number)
+    condition === "even" ? isEvenNumber(number) : !isEvenNumber(number),
   );
   return filtered.reduce((prev, curr) => prev + curr, 0);
 };
