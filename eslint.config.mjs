@@ -8,14 +8,18 @@ export default [
   pluginJs.configs.recommended, // Apply ESLint's recommended JavaScript rules
   {
     languageOptions: {
-      globals: globals.browser, // Define browser global variables
+      globals: {
+        ...globals.browser, // Define browser global variables
+        ...globals.node, // Define Node.js global variables
+        ...globals.jest, // Add Jest testing globals (describe, test, expect)
+      },
     },
     plugins: {
       prettier: prettierPlugin, // Register Prettier plugin
     },
     rules: {
       "no-unused-vars": "off",
-      "no-console": "warn", // Warn when using console.log
+      "no-console": "off", // Warn when using console.log
       "no-debugger": "error", // Disallow the use of debugger
       "no-var": "error", // Require let or const instead of var
       "prefer-const": "error", // Suggest using const if a variable is never reassigned
@@ -37,6 +41,9 @@ export default [
       "no-shadow": "error", // Disallow variable declarations from shadowing variables declared in the outer scope
       "prettier/prettier": "error", // Enforce Prettier formatting rules as ESLint errors
     },
+  },
+  {
+    ignores: ["**/*", "!src/**"], // Ignore everything except the src folder
   },
   prettierConfig, // Integrate Prettier's configuration to disable conflicting ESLint rules
 ];

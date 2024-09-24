@@ -60,7 +60,7 @@ function makeGetUserByIdWithOrganization(getUserById, getOrganizationById) {
         return getOrganizationById(userObj.organizationId).then(
           (organizationObj) => {
             return { ...userObj, organization: { ...organizationObj } };
-          }
+          },
         );
       })
       .catch((error) => {
