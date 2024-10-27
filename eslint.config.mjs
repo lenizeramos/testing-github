@@ -39,7 +39,8 @@ export default [
       "no-multiple-empty-lines": ["error", { max: 1 }], // Disallow multiple empty lines
       "consistent-return": "error", // Require return statements to either always or never specify values
       "no-shadow": "error", // Disallow variable declarations from shadowing variables declared in the outer scope
-      "prettier/prettier": "error", // Enforce Prettier formatting rules as ESLint errors
+      // "prettier/prettier": "error", // Enforce Prettier formatting rules as ESLint errors
+      "prettier/prettier": ["error", { endOfLine: "auto" }],
     },
   },
   {
